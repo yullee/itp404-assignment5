@@ -1,0 +1,16 @@
+<p>
+  <br/>
+  Total count: {{model.data.children.length}}
+</p>
+
+{{#each model.data.children as |subreddit|}}
+
+<div id="ember-bootstrap-wormhole">
+  <hr/>
+  <p><b>Title: </b> {{subreddit.data.title}}</p>
+  <p><b>Num Comments: </b> {{subreddit.data.num_comments}}</p>
+  <p><b>Ups: </b>{{subreddit.data.ups}}</p>
+  <p><b>Downs: </b>{{subreddit.data.downs}}</p>
+  <p><b>Domain: </b>{{subreddit.data.domain}}</p>
+</div>
+{{/each}}
