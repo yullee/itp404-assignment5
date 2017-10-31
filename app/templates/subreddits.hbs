@@ -1,12 +1,23 @@
 <p>
   <br/>
-  Total count: {{model.data.children.length}}
+  Total count: {{model.length}}
 </p>
 
-{{#each model.data.children as |subreddit|}}
+{{#each model as |subreddit|}}
 
 <div id="ember-bootstrap-wormhole">
   <hr/>
+  <!-- If a subreddit post has a value in the thumbnail property -->
+  {{#if subreddit.data.thumbnail}}
+    <!-- Display the image -->
+    <img src={{subreddit.data.thumbnail}}/>
+
+    <!-- If it doesn’t, -->
+    {{else}}
+    <!-- Show a placeholder image -->
+    <img src='https://cdn3.iconfinder.com/data/icons/cute-flat-social-media-icons-3/128/reddit.png'/>
+    {{/if}}
+
   <p><b>Title: </b> {{subreddit.data.title}}</p>
   <p><b>Num Comments: </b> {{subreddit.data.num_comments}}</p>
   <p><b>Ups: </b>{{subreddit.data.ups}}</p>

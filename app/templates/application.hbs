@@ -1,8 +1,14 @@
 <h1>Reddit Search</h1>
 
-<!--  ember has its input types -->
-{{input type="text" value=subreddit}}
+<!--  Ember has its input types -->
+<!-- {{input type="text" value=subreddit}}
 
-<button onclick={{action "searchForEvents"}}>Search</button>
+<button onclick={{action "searchForEvents"}}>Search</button> -->
+
+
+<form onsubmit={{action "searchForEvents"}}>
+  {{input type="text" value=subreddit}}
+  <button type="submit">Search</button>
+</form>
 
 {{outlet}}
