@@ -1,0 +1,23 @@
+<div>
+    <!-- an up arrow is clicked once -->
+    {{#if upClicked}}
+        <!-- display an up arrow -->
+        <h2><i class="fa fa-arrow-up" onclick={{action "increment"}} ></i></h2>
+        {{else}}
+
+        <!-- disable an up arrow & change the icon color -->
+        <h2><i class="fa fa-arrow-up disabled icon-background"></i></h2>
+    {{/if}}
+
+    <!-- display a score -->
+    {{score}}
+
+    <!-- a down arrow is clicked once -->
+    {{#if downClicked}}
+        <!-- display a down arrow -->
+        <h2><i class="fa fa-arrow-down" onclick={{action "decrement"}}></i></h2>
+        {{else}}
+        <!-- disable a down arrow -->
+        <h2><i class="fa fa-arrow-down disabled icon-background"></i></h2>
+    {{/if}}
+</div>

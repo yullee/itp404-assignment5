@@ -1,0 +1,32 @@
+
+<div id="ember-bootstrap-wormhole">
+    <hr/> <!-- add a new line -->
+    <div class="col-md-3">
+        {{vote-control score=subreddit.data.score onvote=(action "changeScore")}}
+
+        <!-- display a relative time -->
+        <p>{{relative-time subreddit.data.created}}</p>
+    </div>
+
+    <div class="col-md-3">
+        <!-- if thumbnail is true -->
+        {{#if thumbnail}}
+            <!-- display the image -->
+            <img src={{subreddit.data.thumbnail}}/>
+
+            <!-- if thumbnail is false -->
+            {{else}}
+            <!-- show a placeholder image -->
+            <img src='https://cdn3.iconfinder.com/data/icons/cute-flat-social-media-icons-3/128/reddit.png'/>
+        {{/if}}
+    </div>
+
+    <div class="col-md-6">
+        <p><b>Title: </b> <a href={{subreddit.data.url}}>{{subreddit.data.title}}</a></p>
+        <p><b>Num Comments: </b> {{subreddit.data.num_comments}}</p>
+        <p><b>Ups: </b>{{subreddit.data.ups}}</p>
+        <p><b>Downs: </b>{{subreddit.data.downs}}</p>
+        <p><b>Domain: </b>{{subreddit.data.domain}}</p>
+        <hr/>
+     </div>
+</div>
