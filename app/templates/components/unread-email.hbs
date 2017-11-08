@@ -1,0 +1,9 @@
+{{#if email.read}} <!-- If the email is read -->
+    <h4>{{email.title}}</h4>
+
+{{else}}
+    <h4 onclick={{action "read"}}>
+        <strong>{{email.title}}</strong> <!-- Make the title bold -->
+    </h4>
+
+{{/if}}

@@ -1,17 +1,19 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  actions: {
-    // Assignment 5
-    // searchForEvents: function() {
-    //   let subreddit = this.get('subreddit');
-    //   this.transitionToRoute('subreddits', subreddit);
-    // }
+     email: {
+         read: false, // Set a read status as false
+         title: 'ITP 404 Notification'
+     },
+     actions: {
+        searchForEvents(event) {
+          event.preventDefault();
+          let subreddit = this.get('subreddit');
+          this.transitionToRoute('subreddits', subreddit);
+        },
 
-    searchForEvents(event) {
-      event.preventDefault();
-      let subreddit = this.get('subreddit');
-      this.transitionToRoute('subreddits', subreddit);
+        markAsRead() {
+          this.set('email.read', true);
+        }
     }
-  }
 });
